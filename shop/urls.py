@@ -36,6 +36,6 @@ if settings.DEBUG:
  
     
 # Всегда отдавать media вручную — если не DEBUG и Render не справляется
-urlpatterns = [
-re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+urlpatterns += [
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
