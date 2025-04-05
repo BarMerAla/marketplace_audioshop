@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import include, path
 from django.conf.urls.static import static
 from django.conf import settings
@@ -28,6 +29,10 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+    
+urlpatterns += [
+    path("media/<path:path>", lambda request, path: HttpResponse(f"MEDIA: {path}")),
+]
     # urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)  #  убрали для корректной работы с Render
     
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
