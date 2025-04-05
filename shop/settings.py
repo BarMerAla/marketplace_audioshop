@@ -104,6 +104,7 @@ if DEBUG:
             conn_max_age=600, 
             ssl_require=False)  # локально без SSL
 }
+    
 else:
     DATABASES = {
         'default': dj_database_url.parse(
