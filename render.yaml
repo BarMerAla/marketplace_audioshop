@@ -9,4 +9,4 @@ services:
         serve: /media
     disk:
       name: media
-      mountPath: /media
+      mountPath: media
