@@ -5,7 +5,7 @@ services:
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn shop.wsgi:application"
     staticDirs:
-      - path: /media
+      - path: media
         serve: /media
     disk:
       name: media
