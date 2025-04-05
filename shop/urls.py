@@ -29,10 +29,6 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)  
     
-urlpatterns += [
-    path("media/<path:path>", lambda request, path: HttpResponse(f"MEDIA: {path}")),
-]
-    # urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)  #  убрали для корректной работы с Render
-    
-# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
