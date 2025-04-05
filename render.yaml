@@ -3,10 +3,10 @@ services:
     name: marketplace_audioshop
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "cp -r /media/* ./media/ || true && gunicorn shop.wsgi:application"
+    startCommand: "mkdir -p ./media && cp -r /media/* ./media/ || true && gunicorn shop.wsgi:application"
     staticDirs:
       - path: media
         serve: /media
     disk:
       name: media
-      mountPath: media
+      mountPath: /media
