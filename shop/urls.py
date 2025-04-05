@@ -25,7 +25,10 @@ urlpatterns = [
     path('cart/', include('cart.urls', namespace='cart')),
     path('user/', include('userauth.urls', namespace='userauth')),
     path('', include('main.urls', namespace='main')),
+    
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)  
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
