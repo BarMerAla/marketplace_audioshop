@@ -97,9 +97,21 @@ WSGI_APPLICATION = 'shop.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+if DEBUG:
+    DATABASES = {
+        'default': dj_database_url.parse(
+            config("DATABASE_URL"), 
+            conn_max_age=600, 
+            ssl_require=False)  # локально без SSL
 }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(
+            config("DATABASE_URL"), 
+            conn_max_age=600, 
+            ssl_require=True)   # на проде обязательно
+}
+    
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
