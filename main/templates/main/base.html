@@ -68,11 +68,11 @@
                 </form>
                 <div class="icons" >
                     <a href="{% url 'cart:cart_detail' %}">
-                        <img src="/media/free-icon.png" class="icon" style="width:28px; height:28px; margin-right:20px; color: white;">
+                        <img src="{% static 'icons/free-icon.png' %}" class="icon" style="width:28px; height:28px; margin-right:20px; color: white;">
                     </a>
                     {% if request.user.is_authenticated %}
                     <div class="dropdown">
-                        <img src="/media/icons8-cab.png" class="icon" style="width:28px; height:28px; margin-right:20px; color: white;
+                        <img src="{% static 'icons8-cab.png' %}" class="icon" style="width:28px; height:28px; margin-right:20px; color: white;
                         cursor: pointer;">
                         <div class="dropdown-cab-menu">
                             <a href="{% url 'userauth:cab' %}">Личный кабинет</a>
@@ -81,7 +81,7 @@
                     </div>
                     {% else %}
                     <a href="{% url 'userauth:login' %}">
-                        <img src="/media/icons8-48.png" class="icon" style="width:30px; height:30px;">
+                        <img src="{% static 'icons8-48.png' %}" class="icon" style="width:30px; height:30px;">
                     </a>     
                     {% endif %}
                 </div>
