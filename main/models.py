@@ -11,7 +11,7 @@ class Product(models.Model):
     category = models.ForeignKey("Category", on_delete=models.PROTECT, verbose_name="Категория", null=True, blank=True)
     color = models.CharField(verbose_name="Цвет товара", max_length=50, null=True, blank=True)
     quantity = models.PositiveIntegerField(verbose_name="Количество товара", default=0)
-    photo = models.ImageField(verbose_name="Фото товара", upload_to="photo/%Y/%m/%d", default=None)
+    photo = models.ImageField(verbose_name="Фото товара", upload_to="photo/%Y/%m/%d", null=True, blank=True)
     full_description = RichTextField(verbose_name="Полное описание товара", default="")
     
     def __str__(self):
