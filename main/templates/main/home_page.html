@@ -51,7 +51,11 @@
             <div class="product-card">
                 <div class="product-top">
                     <div class="product-image hover-wrapper">
+                    {% if item.photo %}
                     <img src="{{ item.photo.url }}" alt="{{ item.name }}">
+                    {% else %}
+                    <img src="{% static 'img/istockphoto.jpg' %}" alt="Нет фото">
+                    {% endif %}
                     <a href="{% url 'main:product_detail' item.id %}" class="hover-overlay">
                         <span><i class="fas fa-eye"></i>Подробнее</span>
                     </a>
