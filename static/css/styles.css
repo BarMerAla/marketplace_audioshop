@@ -87,6 +87,7 @@ main {
     font-size: 20px;
     text-decoration: none;
 }
+
 .content-area {
     display: flex;
     flex-direction: column;
@@ -101,7 +102,6 @@ main {
     justify-content: center; /* Центрируем карточки */
     padding: 20px;
     max-width: 100%;
-    flex-grow: 1;
 }
 
 .product-card {
@@ -245,9 +245,12 @@ main {
     max-height: 300px; /* сжимаем до 10 брендов (примерно) */
 }
 
+.page-filler {
+    flex-grow: 1;
+}
+
 .pagination {
     text-align: center;
-    margin-top: auto;
     padding: 20px 0;
 }
 

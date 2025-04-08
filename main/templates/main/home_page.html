@@ -84,6 +84,7 @@
             </div>
         </div>
 {% endfor %}
+<div class="page-filler"></div>  <!-- заполнитель -->
     <!-- Пагинация -->
 {% if page_obj.has_other_pages %}
     {% with request.GET.urlencode|cut:"page="|add:"&" as query %}
