@@ -1,11 +1,15 @@
 .all-page {
     display: flex;
     align-items: flex-start;
+    flex: 1;
+    min-height: 100vh; /* растяжение на высоту экрана */
 }
 
 html, body {
     height: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 body {
