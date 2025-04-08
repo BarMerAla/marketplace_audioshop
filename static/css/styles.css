@@ -1,11 +1,14 @@
 .all-page {
     display: flex;
+    flex: 1;
     align-items: flex-start;
 }
 
 html, body {
     height: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 body {
@@ -95,6 +98,7 @@ main {
     justify-content: center; /* Центрируем карточки */
     padding: 20px;
     max-width: 100%;
+    flex-grow: 1;
 }
 
 .product-card {
@@ -240,7 +244,8 @@ main {
 
 .pagination {
     text-align: center;
-    margin-top: 20px;
+    margin-top: auto;
+    padding: 20px 0;
 }
 
 .pagination-list {
