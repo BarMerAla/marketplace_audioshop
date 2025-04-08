@@ -8,10 +8,10 @@
 {% block content%}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <body>
-    <main>
-    <div class="all-page">
-        <div class="sidebar">
-            <form method="get" class="filter-form">
+<main>
+<div class="all-page">
+    <div class="sidebar">
+        <form method="get" class="filter-form">
             <h3>Цена<h3>
                 <div class="price-list">
                     <label class="price-item">
@@ -46,6 +46,7 @@
                 <button type="submit">Выбрать</button>
             </form>
         </div>
+    <div class="content-area">
         <div class="product-container">
         {% for item in items %}
             <div class="product-card">
@@ -117,7 +118,8 @@
         </ul>
     </div>
     {% endwith %}
-{% endif %}
+    {% endif %}
+    </div>
 </div>
 </main>
 </body>
