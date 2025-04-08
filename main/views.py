@@ -61,7 +61,7 @@ def all_products(request):             # вьюха главной страни�
     
     countries = sorted(set(country.strip() for country in raw_countries))
     
-    paginator = Paginator(items, 15)  # 15 товаров на странице
+    paginator = Paginator(items, 20)  # 20 товаров на странице
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
